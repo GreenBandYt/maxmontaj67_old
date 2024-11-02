@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Назначение монтажника - МаксМонтаж67</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/dispatcher_dashboard">Управление заказами</a></li>
+                <li><a href="/logout">Выход</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Назначение монтажника для заказа №{{ order_id }}</h1>
+
+    <form action="/assign_installer/{{ order_id }}" method="post">
+        <label for="installer">Выберите монтажника:</label>
+        <select name="installer_id" id="installer">
+            {% for installer in installers %}
+                <option value="{{ installer.id }}">{{ installer.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Назначить</button>
+    </form>
+
+    <footer>
+        <p>МаксМонтаж67 © 2024</p>
+    </footer>
+</body>
+</html>

@@ -11,7 +11,6 @@ app.config['MYSQL_DB'] = 'maxmontaj67'
 
 mysql = MySQL(app)
 
-
 # Маршрут для создания нового заказчика
 @app.route('/api/customers', methods=['POST'])
 def create_customer():
@@ -34,10 +33,9 @@ def create_customer():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-
 # Маршрут для создания заказа
 @app.route('/api/orders', methods=['POST'])
-def create_new_order():
+def create_order():
     data = request.get_json()
 
     if not data:
@@ -56,7 +54,6 @@ def create_new_order():
         return jsonify({"message": "Заказ успешно создан"}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
 
 @app.route('/api/orders/<int:order_id>', methods=['PUT'])
 def update_order(order_id):
@@ -78,9 +75,8 @@ def update_order(order_id):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-
 @app.route('/api/orders/<int:order_id>/assign', methods=['PUT'])
-def assign_order_installer(order_id):
+def assign_installer(order_id):
     data = request.get_json()
 
     if not data or 'installer_id' not in data:
@@ -99,61 +95,50 @@ def assign_order_installer(order_id):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-
-# Маршруты для отображения HTML-страниц
 @app.route('/')
 def home():
     return render_template('index.html')
-
 
 @app.route('/login')
 def login():
     return render_template('login.html')
 
-
 @app.route('/dispatcher_dashboard')
 def dispatcher_dashboard():
     return render_template('dispatcher_dashboard.html')
-
 
 @app.route('/installer_dashboard')
 def installer_dashboard():
     return render_template('installer_dashboard.html')
 
-
 @app.route('/create_order')
-def create_order_page():
+def create_order():
     return render_template('create_order.html')
-
 
 @app.route('/my_orders')
 def my_orders():
     return render_template('my_orders.html')
 
-
 @app.route('/assign_installer')
-def assign_installer_page():
+def assign_installer():
     return render_template('assign_installer.html')
-
 
 @app.route('/available_orders')
 def available_orders():
     return render_template('available_orders.html')
 
-
 @app.route('/client_dashboard')
 def client_dashboard():
     return render_template('client_dashboard.html')
-
 
 @app.route('/feedback')
 def feedback():
     return render_template('feedback.html')
 
-
 @app.route('/view_feedback')
 def view_feedback():
     return render_template('view_feedback.html')
+
 
 
 if __name__ == '__main__':

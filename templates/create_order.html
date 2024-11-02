@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Создать заказ - МаксМонтаж67</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/client_dashboard">Мои заказы</a></li>
+                <li><a href="/create_order">Создать заказ</a></li>
+                <li><a href="/logout">Выход</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Создать новый заказ</h1>
+
+    <form action="/api/orders" method="post">
+        <label for="work_type">Тип Работы:</label>
+        <select id="work_type" name="work_type">
+            <option value="Монтаж кондиционера">Монтаж кондиционера</option>
+            <option value="Ремонт кондиционера">Ремонт кондиционера</option>
+            <option value="Обслуживание кондиционера">Обслуживание кондиционера</option>
+        </select>
+        <br><br>
+
+        <label for="address">Адрес:</label>
+        <input type="text" id="address" name="address" required>
+        <br><br>
+
+        <button type="submit">Создать заказ</button>
+    </form>
+
+    <footer>
+        <p>МаксМонтаж67 © 2024</p>
+    </footer>
+</body>
+</html>
