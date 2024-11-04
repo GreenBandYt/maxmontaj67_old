@@ -29,14 +29,13 @@
             </tr>
         </thead>
         <tbody>
-            {% for order in available_orders %}
+            <!-- Здесь будет динамически генерируемый список доступных заказов -->
             <tr>
-                <td>{{ order[0] }}</td>
-                <td>{{ order[1] }}</td>
-                <td>{{ order[2] }}</td>
-                <td><a href="/take_order/{{ order[0] }}">Взять в работу</a></td>
+                <td>1</td>
+                <td>Монтаж кондиционера</td>
+                <td>Улица Примерная, дом 1</td>
+                <td><a href="/take_order/1">Взять в работу</a></td>
             </tr>
-            {% endfor %}
         </tbody>
     </table>
 

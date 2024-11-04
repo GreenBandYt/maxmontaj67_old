@@ -30,18 +30,15 @@
             </tr>
         </thead>
         <tbody>
-        {% for order in orders %}
-        <tr>
-            <td>{{ order.id }}</td>
-            <td>{{ order.work_type }}</td>
-            <td>{{ order.address }}</td>
-            <td>{{ order.status }}</td>
-            <td>{{ order.installer if order.installer else "Не назначен" }}</td>
-            <td>
-                <a href="/assign_installer/{{ order.id }}">Назначить монтажника</a>
-            </td>
-        </tr>
-        {% endfor %}
+            <!-- Здесь будет динамически генерируемый список заказов -->
+            <tr>
+                <td>1</td>
+                <td>Монтаж кондиционера</td>
+                <td>Улица Примерная, дом 1</td>
+                <td>В процессе</td>
+                <td>Не назначен</td>
+                <td><a href="/assign_installer/{{ order.id }}">Назначить монтажника</a></td>
+            </tr>
         </tbody>
     </table>
 

@@ -17,9 +17,9 @@
 
     <h1>Назначить монтажника</h1>
 
-    <form action="/api/orders/{{ order_id }}/assign" method="post">
+    <form action="/api/orders/assign" method="post">
         <label for="order_id">ID заказа:</label>
-        <input type="text" id="order_id" name="order_id" value="{{ order_id }}" readonly>
+        <input type="text" id="order_id" name="order_id" required>
         <br><br>
 
         <label for="installer_id">Выберите монтажника:</label>
