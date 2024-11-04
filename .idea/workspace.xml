@@ -6,13 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="14b5cf71-7069-4d6c-b282-ae0265d5fe50" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/assign_installer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/assign_installer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/create_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create_order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dispatcher_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dispatcher_dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/installer_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/installer_dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/my_orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/my_orders.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
