@@ -34,9 +34,10 @@ def create_customer():
         return jsonify({"error": str(e)}), 500
 
 # Маршрут для создания заказа
+# Маршрут для создания заказа
 @app.route('/api/orders', methods=['POST'])
 def create_new_order():
-    data = request.form
+    data = request.form  # Изменение на request.form
 
     if not data:
         return jsonify({"error": "Нет данных"}), 400

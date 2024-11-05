@@ -36,15 +36,17 @@ def create_customer():
 # Маршрут для создания заказа
 @app.route('/api/orders', methods=['POST'])
 def create_new_order():
-    data = request.form
+    data = request.get_json()
 
     if not data:
         return jsonify({"error": "Нет данных"}), 400
 
-    # Если выбран новый заказчик, создаем его и используем ID для нового заказа
-    if data['customer_id'] == 'new':
-        try:
-            cur = mysql.connection.cursor()
+    try:
+        cur = mysql.connection.cursor()
+
+        # Получаем имя заказчика на основе его ID
+        if data['customer_id'] == 'new':
+            # Создание нового заказчика
             query = """
                 INSERT INTO customers (name, phone, email, address)
                 VALUES (%s, %s, %s, %s)
@@ -52,25 +54,31 @@ def create_new_order():
             cur.execute(query, (data['new_customer_name'], data.get('new_customer_phone'), data.get('new_customer_email'), data.get('new_customer_address')))
             mysql.connection.commit()
             customer_id = cur.lastrowid
-            cur.close()
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
-    else:
-        customer_id = data['customer_id']
+            customer_name = data['new_customer_name']
+        else:
+            # Использование существующего заказчика
+            customer_id = data['customer_id']
+            cur.execute("SELECT name FROM customers WHERE id = %s", (customer_id,))
+            customer = cur.fetchone()
+            if customer:
+                customer_name = customer[0]
+            else:
+                return jsonify({"error": "Заказчик не найден"}), 404
 
-    try:
-        cur = mysql.connection.cursor()
+        # Создание заказа с именем заказчика
         query = """
-            INSERT INTO orders (customer_id, work_type, address, status)
-            VALUES (%s, %s, %s, %s)
+            INSERT INTO orders (customer_id, customer_name, work_type, address, status)
+            VALUES (%s, %s, %s, %s, %s)
         """
-        cur.execute(query, (customer_id, data['work_type'], data['address'], 'new'))
+        cur.execute(query, (customer_id, customer_name, data['work_type'], data['address'], 'new'))
         mysql.connection.commit()
         cur.close()
 
         return jsonify({"message": "Заказ успешно создан"}), 201
+
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 
 # Маршрут для обновления заказа
