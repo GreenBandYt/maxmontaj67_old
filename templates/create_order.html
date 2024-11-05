@@ -18,15 +18,13 @@
     </header>
 
     <h1>Создать заказ и выбрать заказчика</h1>
-
     <form action="/api/orders" method="post">
         <label for="customer_id">Выберите заказчика:</label>
         <select id="customer_id" name="customer_id">
             <option value="new" selected>Создать нового заказчика</option>
             <!-- Динамически сгенерированный список существующих заказчиков -->
-            {% for customer in customers %}
-                <option value="{{ customer[0] }}">{{ customer[1] }}</option>
-            {% endfor %}
+            <option value="1">Иван Иванов</option>
+            <option value="2">Петр Петров</option>
         </select>
         <br><br>
 
@@ -62,6 +60,7 @@
 
         <button type="submit">Создать заказ</button>
     </form>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
