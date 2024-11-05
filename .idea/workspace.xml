@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14b5cf71-7069-4d6c-b282-ae0265d5fe50" name="Changes" comment="" />
+    <list default="true" id="14b5cf71-7069-4d6c-b282-ae0265d5fe50" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Structura.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maxmontaj67.wsgi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/assign_installer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/available_orders.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/client_dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/create_order.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dispatcher_dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/feedback.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/installer_dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/my_orders.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/update_order_status.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/view_all_orders.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/view_feedback.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/~$ан на 04.11.2024.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/~$ли пользователей 2.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Роли пользователей.docx" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +74,11 @@
         <option name="myModuleName" value="maxmontaj67" />
       </console-settings>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\ShareFolder\maxmontaj67" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.api">
     <configuration name="api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
