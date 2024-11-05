@@ -34,30 +34,35 @@ def create_customer():
         return jsonify({"error": str(e)}), 500
 
 # Маршрут для создания заказа
-# Маршрут для создания заказа
 @app.route('/api/orders', methods=['POST'])
 def create_new_order():
-    data = request.form  # Изменение на request.form
+    # Получение данных из формы
+    customer_id = request.form.get('customer_id')
+    work_type = request.form.get('work_type')
+    address = request.form.get('address')
 
-    if not data:
+    if not customer_id or not work_type or not address:
         return jsonify({"error": "Нет данных"}), 400
 
     # Если выбран новый заказчик, создаем его и используем ID для нового заказа
-    if data['customer_id'] == 'new':
+    if customer_id == 'new':
         try:
             cur = mysql.connection.cursor()
             query = """
                 INSERT INTO customers (name, phone, email, address)
                 VALUES (%s, %s, %s, %s)
             """
-            cur.execute(query, (data['new_customer_name'], data.get('new_customer_phone'), data.get('new_customer_email'), data.get('new_customer_address')))
+            cur.execute(query, (
+                request.form.get('new_customer_name'),
+                request.form.get('new_customer_phone'),
+                request.form.get('new_customer_email'),
+                request.form.get('new_customer_address')
+            ))
             mysql.connection.commit()
             customer_id = cur.lastrowid
             cur.close()
         except Exception as e:
             return jsonify({"error": str(e)}), 500
-    else:
-        customer_id = data['customer_id']
 
     try:
         cur = mysql.connection.cursor()
@@ -65,7 +70,7 @@ def create_new_order():
             INSERT INTO orders (customer_id, work_type, address, status)
             VALUES (%s, %s, %s, %s)
         """
-        cur.execute(query, (customer_id, data['work_type'], data['address'], 'new'))
+        cur.execute(query, (customer_id, work_type, address, 'new'))
         mysql.connection.commit()
         cur.close()
 
